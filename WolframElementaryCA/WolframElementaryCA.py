@@ -5,26 +5,26 @@ import numpy as np
 space = 128
 
 state = []
-for i in range(space):
+for s1 in range(space):
     state.append(0)
 state.append(1)
-for i in range(space):
+for s2 in range(space):
     state.append(0)
 
-# state = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+# state = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
-rule_set_binary = [0, 1, 1, 0, 1, 0, 0, 0]
+rule_set_binary = [0, 0, 0, 1, 1, 1, 1, 0]
 
 iterations = int(len(state)/2)
 
-basic_rules = [[0, 0, 0],
-               [0, 0, 1],
-               [0, 1, 0],
-               [0, 1, 1],
-               [1, 0, 0],
-               [1, 0, 1],
+basic_rules = [[1, 1, 1],
                [1, 1, 0],
-               [1, 1, 1]]
+               [1, 0, 1],
+               [1, 0, 0],
+               [0, 1, 1],
+               [0, 1, 0],
+               [0, 0, 1],
+               [0, 0, 0]]
 
 
 def lookup_neighbors(old_state, position):
