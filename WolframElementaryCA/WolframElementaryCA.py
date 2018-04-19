@@ -2,7 +2,7 @@ import copy
 import matplotlib.pyplot as plt
 import numpy as np
 
-space = 128
+space = 250
 
 state = []
 for s1 in range(space):
@@ -15,7 +15,7 @@ for s2 in range(space):
 
 rule_set_binary = [0, 0, 0, 1, 1, 1, 1, 0]
 
-iterations = int(len(state)/2)
+steps = int(len(state)/2)
 
 basic_rules = [[1, 1, 1],
                [1, 1, 0],
@@ -89,7 +89,7 @@ def advance_state(start_state, iterations, rule_set):
     return state_collection
 
 
-states = advance_state(state, iterations, rule_set_binary)
+states = advance_state(state, steps, rule_set_binary)
 
 # for i in states:
 #     print(i)
@@ -97,7 +97,9 @@ states = advance_state(state, iterations, rule_set_binary)
 
 # data = np.random.random(size=(6, 6))
 
-data = np.array(states)
-plt.imshow(data, interpolation='nearest', cmap='binary')
+# data = np.array(states)
+# plt.imshow(data, interpolation='nearest', cmap='binary')
+#
+# plt.show()
+# plt.close()
 
-plt.show()
